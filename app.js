@@ -26,27 +26,31 @@ function getComputerChoice() {
 
 }
 
-
 function playRound(playerSelection, computerSelection) {
+
 
     if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
         return 'You win! Rock beats Scissors'
     } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
         return 'You win! Scissors beats Paper'
     } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        return 'You win! Paper beats Rock'
+        return `You win! Paper beats Rock`
     } else if (playerSelection === computerSelection) {
-        return 'Draw!'
-    } else if (playerSelection !== 'Rock' || playerSelection !== 'Scissors' || playerSelection !== 'Paper') {
-        return 'Please type "Rock", "Paper", "Scissors" only, dummy'
+        return `Draw!`
     } else {
         return `You lose! ${computerSelection} beats ${playerSelection}!`
     }
 
 }
 
-const playerSelection = capitalize('Rock');
-const computerSelection = getComputerChoice();
+function game() {
 
-console.log(playRound(playerSelection, computerSelection));
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = capitalize(prompt(''));
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+     }
 
+}
+
+game()
