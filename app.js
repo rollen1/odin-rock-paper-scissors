@@ -84,4 +84,5 @@ function game() {
 
 // calling function
 
-game()
+
+// game()
